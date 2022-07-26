@@ -5,7 +5,7 @@ questao = {
 def valida_questao(questao):
     lista = ['titulo', 'nivel', 'opcoes', 'correta']
     questao_nova = {}
-    erro = 0
+    
     #verificando se titulo, nivel, opcoes e correta estao na questao:
     
     for chave in lista:
@@ -17,7 +17,6 @@ def valida_questao(questao):
     #numero de chaves
     if len(questao.keys()) != 4:
         questao_nova['outro'] = 'numero_chaves_invalido'
-        erro += 1
     
     # titulo existe mas ta vazio:
 
@@ -25,24 +24,23 @@ def valida_questao(questao):
         verifica = questao['titulo'].strip()
         if verifica == '':
             questao_nova['titulo'] = 'vazio'
-            erro += 1
 
     # verificando nome dos niveis
 
     if 'nivel' in questao:
         if questao['nivel'] != 'facil' and  questao['nivel'] != 'medio' and  questao['nivel'] != 'dificil':
             questao_nova['nivel'] = 'valor_errado'
-            erro += 1
+            
     if 'correta' in questao:
         if questao['correta'] != 'A' and questao['correta'] != 'B' and questao['correta'] != 'C' and questao['correta'] != 'D':
             questao_nova['correta'] = 'valor_errado'
-            erro += 1
+            
     if 'opcoes' in questao:
         opcoes = len(questao['opcoes'].keys())
         
         if opcoes != 4:
             questao_nova['opcoes'] = 'tamanho_invalido'
-            erro += 1
+            
         if opcoes == 4:
             contador = 0
             if 'A' in questao['opcoes']:
@@ -56,7 +54,7 @@ def valida_questao(questao):
 
             if contador != 4:
                 questao_nova['opcoes'] = 'chave_invalida_ou_nao_encontrada'
-                erro += 1
+                
             # checando se existe alguma opcao vazia:
 
             if contador == 4:
