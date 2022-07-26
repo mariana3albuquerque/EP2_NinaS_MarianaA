@@ -64,7 +64,7 @@ def valida_questao(questao):
                     if verifica == '':
                         
                         questao_nova['opcoes'][k] = 'vazia'
-                        erro += 1
+                        
                 if len(questao_nova['opcoes'].keys()) == 0:
                     del questao_nova['opcoes']
                 
