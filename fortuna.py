@@ -52,11 +52,12 @@ while acaba == False:
         print(enunciado)
         palpite = input('RESPOSTA: ')
         if palpite == 'ajuda':
+            ajuda -=1
             time.sleep(2)
             questao_com_ajuda = gera_ajuda(questao)
             print(questao_com_ajuda)
             palpite = input('RESPOSTA: ')
-            
+
         if palpite.upper() == questao['correta']:
             premio = 1000
             jogadas += 1
