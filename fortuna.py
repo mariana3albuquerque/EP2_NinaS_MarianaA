@@ -44,14 +44,32 @@ print('Vamos começar com questões do nível FACIL!')
 
 jogadas = 1
 sorteadas = [] #lista de questoes que ja foram
-questao = sorteia_questao_inedida(dicionario_questoes,'facil',sorteadas)
-enunciado = questao_para_texto(questao,jogadas)
-print(enunciado)
-palpite = input('RESPOSTA: ')
-if palpite.upper() == questao['correta']:
-    premio = 1000
-    jogadas += 1
-    print(f'Parabens, voce acertou\n seu premio agora é de {premio} CONTOS DE REIS ')
+while acaba == False:
+    while jogadas < 4:
+        questao = sorteia_questao_inedida(dicionario_questoes,'facil',sorteadas)
+        enunciado = questao_para_texto(questao,jogadas)
+        print(enunciado)
+        palpite = input('RESPOSTA: ')
+        if palpite.upper() == questao['correta']:
+            premio = 1000
+            jogadas += 1
+            print(f'Parabens, voce acertou\n seu premio agora é de {premio} CONTOS DE REIS ')
+        else:
+            print('PERDEU. VAI SAIR SEM NADA TROXA')
+            acaba = True
+
+jogar_de_novo = input('pressione ENTER para jogar de novo')
+if jogar_de_novo == '':
+    acaba = False
+    
+
+
+
+
+
+
+
+
 
 
 
