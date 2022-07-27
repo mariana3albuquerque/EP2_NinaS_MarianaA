@@ -35,7 +35,8 @@ print('')
 nome = input('Qual seu nome?')
 
 print(f'Ok {nome.upper()}, você tem direito a pular 3 vezes e 2 ajudas!')
-time.sleep(2)
+print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"! ')
+time.sleep(5)
 print('')
 print('O jogo já vai começar! Lá vem a primeira questão!')
 print(" \n  ")
@@ -50,6 +51,12 @@ while acaba == False:
         enunciado = questao_para_texto(questao,jogadas)
         print(enunciado)
         palpite = input('RESPOSTA: ')
+        if palpite == 'ajuda':
+            time.sleep(2)
+            questao_com_ajuda = gera_ajuda(questao)
+            print(questao_com_ajuda)
+            palpite = input('RESPOSTA: ')
+            
         if palpite.upper() == questao['correta']:
             premio = 1000
             jogadas += 1
