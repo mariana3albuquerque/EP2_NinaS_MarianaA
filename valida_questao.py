@@ -71,7 +71,7 @@ def valida_questao(questao):
    
     return questao_nova
 
-print(valida_questao(questao))
+
 
 
 

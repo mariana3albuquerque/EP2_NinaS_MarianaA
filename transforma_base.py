@@ -40,4 +40,3 @@ def transforma_base(lista):
         del transformada['dificil']
     return transformada
 
-print(transforma_base(lista))
