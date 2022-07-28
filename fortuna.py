@@ -22,7 +22,7 @@ dicionario_questoes = transforma_base(quest)
 
 #comecando o jogo
 premio = [0,1000,5000,10000,30000,50000,100000,300000,500000,1000000]
-lista_opcoes = ['A',"B","C","D","AJUDA","PULA"]
+lista_opcoes = ['A',"B","C","D","AJUDA","PULA","PARAR"]
 n = 0
 pulo = 3
 ajuda = 2
@@ -60,7 +60,7 @@ while acaba == False:
         nivel = 'dificil'
 
     questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
-    enunciado = questao_para_texto(questao,jogadas)
+    enunciado = questao_para_texto(questao,jogadas)   #problema quando vai pro nivel medio 
 
 
     if questao in lista_questoes_usadas and validade == 0:
@@ -93,8 +93,10 @@ while acaba == False:
                 elif ajuda > 0:
                     questao_com_ajuda = gera_ajuda(questao)
                     print('Ok, lá vem a ajuda! Você ainda tem {} ajudas'.format(ajuda))
+                    time.sleep(2)
                     print(questao_com_ajuda)
                     print('')
+                    time.sleep(2)
                     print(enunciado)
                     palpite = input('RESPOSTA: ')
                     print('')
@@ -108,8 +110,12 @@ while acaba == False:
                 
                 if palpite.upper() == 'AJUDA':
                     print('Não deu! Você já pediu uma ajuda nesta questão!')
+                    time.sleep(2)
                     print(enunciado)
-
+                
+                if palpite.upper() == 'PARAR':
+                    print(f'PARABÉNS! Você vai sair com um prêmio de {premio[n]} CONTOS DE REIS')
+                    acaba = True
                 
 
             if palpite.upper() == 'PULA':
