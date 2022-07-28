@@ -145,7 +145,7 @@ while acaba == False:
                     ja_pediu_ajuda = False
                 else:
                     time.sleep(2)
-                    print ('\033[0,32mPARABÉNS! VOCÊ GANHOU 1 MILHÃO DE REIAS!\033[m')
+                    print ('\033[1;32mPARABÉNS! VOCÊ GANHOU 1 MILHÃO DE REAIS!\033[m')
                     acaba = True 
 
             elif palpite.upper() != questao['correta'] and palpite.upper()!='PARAR' and palpite.upper()!= 'AJUDA' and palpite.upper()!='PULA':
@@ -158,7 +158,6 @@ while acaba == False:
     if jogar_de_novo == '':
         acaba = False
 
-        
 
 
 
