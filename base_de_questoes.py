@@ -12,6 +12,21 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
           'opcoes': {'A': '21 de Abril', 'B': '12 de Outubro', 'C': '07 de Setembro', 'D': '15 de Novembro'},
           'correta': 'C'},
+          
+          {'titulo': 'Qual a montanha mais alta do mundo?',
+          'nivel':'facil' ,
+          'opcoes': {'A':' Mauna Kea', 'B': 'Dhaulagiri', 'C':' Monte Chimborazo' , 'D':'Monte Everest' }, 
+          'correta': 'D'},
+
+          {'titulo': 'A que temperatura a água ferve?',
+          'nivel':'facil' ,
+          'opcoes': {'A':'200 ºC', 'B': '0 ºC', 'C':'180 ºC' , 'D':'100 ºC' }, 
+          'correta': 'D'},
+
+          {'titulo': 'Qual o maior planeta do sistema solar?',
+          'nivel':'facil' ,
+          'opcoes': {'A':'Marte', 'B': 'Saturno', 'C':'Júpiter' , 'D':'Sol' }, 
+          'correta': 'C'},
 
          {'titulo': '_________ é um conjunto de particularidades que caracterizam um grupo de pessoas, uma família ou uma sociedade. É formada por princípios morais, hábitos, costumes, histórias, manifestações religiosas, entre outros. Qual palavra melhor completa o início da frase?',
           'nivel': 'facil',
@@ -102,6 +117,16 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel':'medio' ,
           'opcoes': {'A':'Vaticano e Rússia', 'B': 'Nauru e China', 'C':'Mônaco e Canadá' , 'D':'Malta e Estados Unidos' }, 
           'correta': 'A'},
+          
+         {'titulo': 'Qual o nome do presidente do Brasil que ficou conhecido como Jango?',
+          'nivel':'medio' ,
+          'opcoes': {'A':'Jânio Quadros', 'B': 'Jacinto Anjos', 'C':'João Figueiredo' , 'D':'João Goulart' }, 
+          'correta': 'D'},
+         
+         {'titulo': 'Qual o nome do presidente do Brasil que ficou conhecido como Jango?',
+          'nivel':'medio' ,
+          'opcoes': {'A':'Jânio Quadros', 'B': 'Jacinto Anjos', 'C':'João Figueiredo' , 'D':'João Goulart' }, 
+          'correta': 'D'},
 
          {'titulo': 'Como faço para chamar o SAMU?',
           'nivel': 'medio',
@@ -128,6 +153,22 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'opcoes': {'A': '441', 'B': '86', 'C': 'Nenhuma das outras respostas', 'D': '23'},
           'correta': 'D'},
 
+          {'titulo': 'Qual o número mínimo de jogadores numa partida de futebol?',
+          'nivel':'dificil' ,
+          'opcoes': {'A':'8', 'B': '5', 'C':'9' , 'D':'7' }, 
+          'correta': 'D'},
+
+          {'titulo': ' Quais as duas datas que são comemoradas em novembro?',
+          'nivel':'dificil' ,
+          'opcoes': {'A':' Independência do Brasil e Dia da Bandeira', 'B': 'Proclamação da República e Dia Nacional da Consciência Negra', 'C':'Dia do Médico e Dia de São Lucas' , 'D':'Black Friday e Dia da Árvore' }, 
+          'correta': 'B'},
+
+          {'titulo': 'Quanto tempo a luz do Sol demora para chegar à Terra?',
+          'nivel':'dificil' ,
+          'opcoes': {'A':'12 minutos', 'B': '8 minutos', 'C':'12 segundos' , 'D':'12 horas' }, 
+          'correta': 'B'},
+
+
          {'titulo': 'Quem é Oxóssi?!',
           'nivel': 'dificil',
           'opcoes': {'A': 'Rede de mercados', 'B': 'Tipo de poema Dissílabo', 'C': 'Divindade das religiões africanas', 'D': 'Trapper brasileiro'},
@@ -147,6 +188,11 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'dificil',
           'opcoes': {'A': '1906', 'B': '1905', 'C': '1920', 'D': '1921'},
           'correta': 'D'},
+
+          {'titulo': 'Em que ordem surgiram os modelos atômicos?',
+          'nivel':'dificil' ,
+          'opcoes': {'A':'Dalton, Thomson, Rutherford, Rutherford-Bohr', 'B': 'Dalton, Thomson, Rutherford-Bohr, Rutherford', 'C':'Dalton, Rutherford-Bohr, Thomson, Rutherford' , 'D':'Thomson, Dalton, Rutherford, Rutherford-Bohr' }, 
+          'correta': 'A'},
 
          {'titulo': 'Qual o número atômico do nitrogênio?',
           'nivel': 'dificil',
