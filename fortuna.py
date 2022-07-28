@@ -46,6 +46,7 @@ while acaba == False:
     lista_questoes_usadas = []
     validade = 0
     questao = sorteia_questao_inedida(dicionario_questoes,'facil',sorteadas)
+    ja_pediu_ajuda = False
     while acaba == False:
         if  jogadas < 4:
             nivel = 'facil'
@@ -77,30 +78,34 @@ while acaba == False:
         if palpite.upper() in lista_opcoes:
                 
             if palpite.upper() == 'AJUDA':
-                ajuda -=1
-                time.sleep(2)
-                if ajuda == 0: 
-                    print('\nVocê não tem mais \033[33majudas\033[m!, escolha outra opção...\n')
-            
-                elif ajuda > 0:
-                    questao_com_ajuda = gera_ajuda(questao)
-                    print('\nOk, lá vem a \033[33majuda\033[m! Você ainda tem \033[33m{} ajudas\033[m\n'.format(ajuda))
+                if ja_pediu_ajuda == True :
                     time.sleep(2)
-                    print(questao_com_ajuda)
-                    
-                '''if palpite.upper() == 'PULA':
-                    pulo -=1
-                    questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
-                    enunciado = questao_para_texto(questao,jogadas)
+                    print('\nNão deu! Você já pediu uma \033[33majuda\033[m nesta questão!')
+                    time.sleep(2)
                     print(enunciado)
                     palpite = input('RESPOSTA: ')
+                else:
+                    ja_pediu_ajuda = True
+                    ajuda -=1
+                    time.sleep(2)
+                    if ajuda < 0: 
+                        print('\nVocê não tem mais \033[33majudas\033[m!, escolha outra opção...\n')
+                        time.sleep(2)
                 
-                if palpite.upper() == 'AJUDA':
-                    time.sleep(2)
-                    print('Não deu! Você já pediu uma \033[33majuda\033[m nesta questão!')
-                    time.sleep(2)
-                    print(enunciado)
-                    palpite = input('RESPOSTA: ')'''
+                    elif ajuda >= 0:
+                        questao_com_ajuda = gera_ajuda(questao)
+                        print('\nOk, lá vem a \033[33majuda\033[m! Você ainda tem \033[33m{} ajudas\033[m\n'.format(ajuda))
+                        time.sleep(2)
+                        print(questao_com_ajuda)
+                        time.sleep(2)
+                    '''if palpite.upper() == 'PULA':
+                        pulo -=1
+                        questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
+                        enunciado = questao_para_texto(questao,jogadas)
+                        print(enunciado)
+                        palpite = input('RESPOSTA: ')'''
+                    
+                    
                 
             if palpite.upper() == 'PARAR':
                 time.sleep(2)
@@ -124,6 +129,7 @@ while acaba == False:
                     print('\nOk, pulando! Você ainda tem \033[35m{} pulos\033[m'.format(pulo))
                     time.sleep(2)
                     questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
+                    ja_pediu_ajuda = False
                 print('')
                 
             if palpite.upper() == questao['correta']:
@@ -136,6 +142,7 @@ while acaba == False:
                     time.sleep(1.5)
                     validade = 0
                     questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
+                    ja_pediu_ajuda = False
                 else:
                     time.sleep(2)
                     print ('\033[0,32mPARABÉNS! VOCÊ GANHOU 1 MILHÃO DE REIAS!\033[m')
