@@ -15,7 +15,7 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           
           {'titulo': 'Qual a montanha mais alta do mundo?',
           'nivel':'facil' ,
-          'opcoes': {'A':' Mauna Kea', 'B': 'Dhaulagiri', 'C':' Monte Chimborazo' , 'D':'Monte Everest' }, 
+          'opcoes': {'A':'Mauna Kea', 'B': 'Dhaulagiri', 'C':'Monte Chimborazo' , 'D':'Monte Everest' }, 
           'correta': 'D'},
 
           {'titulo': 'A que temperatura a água ferve?',
@@ -160,7 +160,7 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
 
           {'titulo': ' Quais as duas datas que são comemoradas em novembro?',
           'nivel':'dificil' ,
-          'opcoes': {'A':' Independência do Brasil e Dia da Bandeira', 'B': 'Proclamação da República e Dia Nacional da Consciência Negra', 'C':'Dia do Médico e Dia de São Lucas' , 'D':'Black Friday e Dia da Árvore' }, 
+          'opcoes': {'A':'Independência do Brasil e Dia da Bandeira', 'B': 'Proclamação da República e Dia Nacional da Consciência Negra', 'C':'Dia do Médico e Dia de São Lucas' , 'D':'Black Friday e Dia da Árvore' }, 
           'correta': 'B'},
 
           {'titulo': 'Quanto tempo a luz do Sol demora para chegar à Terra?',
