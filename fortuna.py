@@ -80,13 +80,13 @@ while acaba == False:
                 ajuda -=1
                 time.sleep(2)
                 if ajuda == 0: 
-                    print('\nVocê não tem mais ajudas!, escolha outra opção...\n')
+                    print('\nVocê não tem mais \033[33majudas\033[m!, escolha outra opção...\n')
                     print(enunciado)
                     palpite = input('RESPOSTA: \n')
             
                 elif ajuda > 0:
                     questao_com_ajuda = gera_ajuda(questao)
-                    print('\nOk, lá vem a ajuda! Você ainda tem {} ajudas\n'.format(ajuda))
+                    print('\nOk, lá vem a \033[33majuda\033[m! Você ainda tem \033[33m{} ajudas\033[m\n'.format(ajuda))
                     time.sleep(2)
                     print(questao_com_ajuda)
                     print('')
@@ -104,7 +104,7 @@ while acaba == False:
                 
                 if palpite.upper() == 'AJUDA':
                     time.sleep(2)
-                    print('Não deu! Você já pediu uma ajuda nesta questão!')
+                    print('Não deu! Você já pediu uma \033[33majuda\033[m nesta questão!')
                     time.sleep(2)
                     print(enunciado)
                     palpite = input('RESPOSTA: ')
@@ -129,7 +129,7 @@ while acaba == False:
                     print('')
                 else:
                     time.sleep(2)
-                    print('Ok, pulando! Você ainda tem {} pulos'.format(pulo))
+                    print('Ok, pulando! Você ainda tem \033[35m{} pulos\033[m'.format(pulo))
                 print('')
                 
             if palpite.upper() == questao['correta']:
@@ -138,7 +138,7 @@ while acaba == False:
                     n += 1
                     jogadas += 1
                     time.sleep(2)
-                    print(f'\nParabens, você acertou! Seu premio agora é de \033[32m{premio[n]}\033[m REAIS\n')
+                    print(f'\n\033[32mParabens\033[m, você acertou! Seu premio agora é de \033[32m{premio[n]}\033[m REAIS\n')
                     validade = 0
                 else:
                     time.sleep(2)
