@@ -98,15 +98,7 @@ while acaba == False:
                         time.sleep(2)
                         print(questao_com_ajuda)
                         time.sleep(2)
-                    '''if palpite.upper() == 'PULA':
-                        pulo -=1
-                        questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
-                        enunciado = questao_para_texto(questao,jogadas)
-                        print(enunciado)
-                        palpite = input('RESPOSTA: ')'''
                     
-                    
-                
             if palpite.upper() == 'PARAR':
                 time.sleep(2)
                 print(f'\nOK! Você vai sair com um prêmio de \033[32m{premio[n]}\033[m REAIS')
