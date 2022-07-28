@@ -87,10 +87,20 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'medio',
           'opcoes': {'A': '259', 'B': '85', 'C': '49', 'D': '19'},
           'correta': 'D'},
+         
+         {'titulo': 'De quem é a famosa frase “Penso, logo existo”?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Platão', 'B': 'Galileu Galilei','C': 'Descartes','D': 'Sócrates'}, 
+          'correta': 'C' } ,
 
          {'titulo': 'Na Conjectura de _______, escolhendo-se um número natural inicial n, onde n > 0, os seguintes critérios serão obedecidos: Se n for par o seu sucessor será a metade e se n for ímpar o seu sucessor será o triplo mais um, gerando então um novo número. Qual o nome da conjectura?',
           'nivel': 'medio',
           'opcoes': {'A': 'Collatz', 'B': 'Goldbach', 'C': 'Poincaré', 'D': 'Hodge'},
+          'correta': 'A'},
+         
+         {'titulo': 'Quais o menor e o maior país do mundo?',
+          'nivel':'medio' ,
+          'opcoes': {'A':'Vaticano e Rússia', 'B': 'Nauru e China', 'C':'Mônaco e Canadá' , 'D':'Malta e Estados Unidos' }, 
           'correta': 'A'},
 
          {'titulo': 'Como faço para chamar o SAMU?',
