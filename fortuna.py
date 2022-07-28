@@ -4,9 +4,9 @@ from base_de_questoes import quest
 from gera_ajuda_em_uma_questao import gera_ajuda
 from questao_para_texto import questao_para_texto
 from sorteia_questao_inedita import sorteia_questao_inedida
-from sorteia_uma_questao import sorteia_questao
+#from sorteia_uma_questao import sorteia_questao
 from transforma_base import transforma_base
-from valida_questao import valida_questao
+#from valida_questao import valida_questao
 from valida_questoes import valida_questoes
 
 
@@ -65,7 +65,9 @@ while acaba == False:
         palpite = input('RESPOSTA: ')
 
         if palpite.upper() not in lista_opcoes:
+            time.sleep(2)
             print("\nOpcão Inválida! Tente novamente...\n")
+            time.sleep(1)
             print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"! ')
             time.sleep(1)
             print(enunciado)
@@ -101,13 +103,15 @@ while acaba == False:
                     palpite = input('RESPOSTA: ')
                 
                 if palpite.upper() == 'AJUDA':
+                    time.sleep(2)
                     print('Não deu! Você já pediu uma ajuda nesta questão!')
                     time.sleep(2)
                     print(enunciado)
                     palpite = input('RESPOSTA: ')
                 
                 if palpite.upper() == 'PARAR':
-                    print(f'OK! Você vai sair com um prêmio de {premio[n]} REAIS')
+                    time.sleep(2)
+                    print(f'OK! Você vai sair com um prêmio de \033[32m{premio[n]}\033[m REAIS')
                     acaba = True
                 
 
@@ -118,11 +122,13 @@ while acaba == False:
                 print(enunciado)
                 palpite = input('RESPOSTA: ')
                 if pulo == 0:
+                    time.sleep(2)
                     print('Você não tem mais pulos!, escolha outra opção...')
                     print(enunciado)
                     palpite = input('RESPOSTA: ')
                     print('')
                 else:
+                    time.sleep(2)
                     print('Ok, pulando! Você ainda tem {} pulos'.format(pulo))
                 print('')
                 
@@ -131,18 +137,21 @@ while acaba == False:
                     lista_questoes_usadas.append(questao)
                     n += 1
                     jogadas += 1
-                    print(f'\nParabens, você acertou! Seu premio agora é de {premio[n]} REAIS\n')
+                    time.sleep(2)
+                    print(f'\nParabens, você acertou! Seu premio agora é de \033[32m{premio[n]}\033[m REAIS\n')
                     validade = 0
                 else:
+                    time.sleep(2)
                     print ('\033[0,32mPARABÉNS! VOCÊ GANHOU 1 MILHÃO DE REIAS!\033[m')
                     acaba = True 
 
             else:
-                print('PERDEU. VAI SAIR SEM NADA TROXA')
+                time.sleep(2)
+                print('\n\033[31mRESPOSTA INCORRETA\033[m! Seu prêmio voltou a ser \033[33m0\033[m REAIS\n ')
                 acaba = True
             
 
-    jogar_de_novo = input('pressione ENTER para jogar de novo')
+    jogar_de_novo = input('\nPressione \033[36mENTER\033[m para reiniciar o jogo')
     if jogar_de_novo == '':
         acaba = False
 
