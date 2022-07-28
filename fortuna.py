@@ -30,20 +30,16 @@ while acaba == False:
 
     
 
-    print('Olá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer!')
+    print('\n\033[35mOlá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer!\033[m\n')
     time.sleep(1)
-    print('')
-    print('')
     nome = input('Qual seu nome? ')
 
-    print(f'Ok {nome.upper()}, você tem direito a pular 3 vezes e 2 ajudas!')
-    print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"! ')
+    print(f'\nOk \033[34m{nome.upper()}\033[m, você tem direito a pular 3 vezes e 2 ajudas!\n')
+    print('As opções de resposta são \033[36m"A"\033[m, \033[32m"B"\033[m, \033[35m"C"\033[m, \033[34m"D"\033[m, \033[33m"ajuda"\033[m, \033[35m"pula"\033[m e \033[31m"parar"\033[m!\n ')
     time.sleep(1)
-    print('')
-    print('O jogo já vai começar! Lá vem a primeira questão!')
-    print(" \n  ")
+    print('O jogo já vai começar! Lá vem a primeira questão!\n')
     time.sleep(1)
-    print('Vamos começar com questões do nível FACIL!')
+    print('Vamos começar com questões do nível \033[32mFACIL\033[m!\n')
 
     jogadas = 1
     sorteadas = [] #lista de questoes que ja foram
@@ -54,99 +50,102 @@ while acaba == False:
         if  jogadas < 4:
             nivel = 'facil'
         elif jogadas < 7:
-            print ('Vamos passar para o nível MEDIO!')
             nivel = 'medio'
+            if jogadas == 4:
+                print ('\nVamos passar para o nível \033[33mMÉDIO\033[m!')
         else:
-            print('Agora você está no nível DIFIIL!')
             nivel = 'dificil'
+            if jogadas == 7:
+                print('\nAgora você está no nível \033[31mDIFÍIL\033[m!')
+            
 
         questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
         enunciado = questao_para_texto(questao,jogadas)   #problema quando vai pro nivel medio 
+        print(enunciado)
+        palpite = input('RESPOSTA: ')
 
-
-        if questao in lista_questoes_usadas and validade == 0:
-            questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
-            enunciado = questao_para_texto(questao,jogadas)
-
-        elif questao not in lista_questoes_usadas:
+        if palpite.upper() not in lista_opcoes:
+            print("\nOpcão Inválida! Tente novamente...\n")
+            print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"! ')
+            time.sleep(1)
             print(enunciado)
-            palpite = input('RESPOSTA: ')
-            print('')
-
-            if palpite.upper() not in lista_opcoes:
-                print("Opcão Inválida!")
-                print(enunciado)
-                palpite = input('RESPOSTA: ')
-                print('')
-                validade = 1
+            palpite = input('RESPOSTA: \n')
+            validade = 1
+        
+        if palpite.upper() in lista_opcoes:
+                
+            if palpite.upper() == 'AJUDA':
+                ajuda -=1
+                time.sleep(2)
+                if ajuda == 0: 
+                    print('\nVocê não tem mais ajudas!, escolha outra opção...\n')
+                    print(enunciado)
+                    palpite = input('RESPOSTA: \n')
             
-            if palpite.upper() in lista_opcoes:
-                    
-                if palpite.upper() == 'AJUDA':
-                    ajuda -=1
+                elif ajuda > 0:
+                    questao_com_ajuda = gera_ajuda(questao)
+                    print('\nOk, lá vem a ajuda! Você ainda tem {} ajudas\n'.format(ajuda))
                     time.sleep(2)
-                    if ajuda == 0: 
-                        print('Você não tem mais ajudas!, escolha outra opção...')
-                        print('')
-                        print(enunciado)
-                        palpite = input('RESPOSTA: ')
-                        print('')
-                    elif ajuda > 0:
-                        questao_com_ajuda = gera_ajuda(questao)
-                        print('Ok, lá vem a ajuda! Você ainda tem {} ajudas'.format(ajuda))
-                        time.sleep(2)
-                        print(questao_com_ajuda)
-                        print('')
-                        time.sleep(2)
-                        print(enunciado)
-                        palpite = input('RESPOSTA: ')
-                        print('')
-                    
-                    if palpite.upper() == 'PULA':
-                        pulo -=1
-                        questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
-                        enunciado = questao_para_texto(questao,jogadas)
-                        print(enunciado)
-                        palpite = input('RESPOSTA: ')
-                    
-                    if palpite.upper() == 'AJUDA':
-                        print('Não deu! Você já pediu uma ajuda nesta questão!')
-                        time.sleep(2)
-                        print(enunciado)
-                    
-                    if palpite.upper() == 'PARAR':
-                        print(f'PARABÉNS! Você vai sair com um prêmio de {premio[n]} CONTOS DE REIS')
-                        acaba = True
-                    
-
+                    print(questao_com_ajuda)
+                    print('')
+                    time.sleep(2)
+                    print(enunciado)
+                    palpite = input('RESPOSTA: ')
+                    print('')
+                
                 if palpite.upper() == 'PULA':
                     pulo -=1
                     questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
                     enunciado = questao_para_texto(questao,jogadas)
                     print(enunciado)
                     palpite = input('RESPOSTA: ')
-                    if pulo == 0:
-                        print('Você não tem mais pulos!, escolha outra opção...')
-                        print(enunciado)
-                        palpite = input('RESPOSTA: ')
-                        print('')
-                    else:
-                        print('Ok, pulando! Você ainda tem {} pulos'.format(pulo))
+                
+                if palpite.upper() == 'AJUDA':
+                    print('Não deu! Você já pediu uma ajuda nesta questão!')
+                    time.sleep(2)
+                    print(enunciado)
+                    palpite = input('RESPOSTA: ')
+                
+                if palpite.upper() == 'PARAR':
+                    print(f'OK! Você vai sair com um prêmio de {premio[n]} REAIS')
+                    acaba = True
+                
+
+            if palpite.upper() == 'PULA':
+                pulo -=1
+                questao = sorteia_questao_inedida(dicionario_questoes,nivel,sorteadas)
+                enunciado = questao_para_texto(questao,jogadas)
+                print(enunciado)
+                palpite = input('RESPOSTA: ')
+                if pulo == 0:
+                    print('Você não tem mais pulos!, escolha outra opção...')
+                    print(enunciado)
+                    palpite = input('RESPOSTA: ')
                     print('')
-                    
-                if palpite.upper() == questao['correta']:
+                else:
+                    print('Ok, pulando! Você ainda tem {} pulos'.format(pulo))
+                print('')
+                
+            if palpite.upper() == questao['correta']:
+                if n<8:
                     lista_questoes_usadas.append(questao)
                     n += 1
                     jogadas += 1
-                    print(f'Parabens, voce acertou! Seu premio agora é de {premio[n]} CONTOS DE REIS ')
+                    print(f'\nParabens, você acertou! Seu premio agora é de {premio[n]} REAIS\n')
                     validade = 0
                 else:
-                    print('PERDEU. VAI SAIR SEM NADA TROXA')
-                    acaba = True
+                    print ('\033[0,32mPARABÉNS! VOCÊ GANHOU 1 MILHÃO DE REIAS!\033[m')
+                    acaba = True 
+
+            else:
+                print('PERDEU. VAI SAIR SEM NADA TROXA')
+                acaba = True
+            
 
     jogar_de_novo = input('pressione ENTER para jogar de novo')
     if jogar_de_novo == '':
         acaba = False
+
         
 
 
