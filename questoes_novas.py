@@ -51,7 +51,7 @@ dificil3 = {'titulo': 'Quanto tempo a luz do Sol demora para chegar à Terra?',
 
 dificil4 = {'titulo': 'Em que ordem surgiram os modelos atômicos?',
 'nivel':'dificil' ,
-'opcoes': {'A':'Dalton, Thomson, Rutherford, Rutherford-Bohr', 'B': 'Dalton, Thomson, Rutherford-Bohr, Rutherford', 'C':'Dalton, Rutherford-Bohr, Thomson, Rutherford' , 'D':'Thomson, Dalton, Rutherford, Rutherford-Bohr' }, 
+'opcoes': {'A': 'Dalton, Thomson, Rutherford, Rutherford-Bohr', 'B':'Dalton, Thomson, Rutherford-Bohr, Rutherford', 'C':'Dalton, Rutherford-Bohr, Thomson, Rutherford' , 'D':'Thomson, Dalton, Rutherford, Rutherford-Bohr' }, 
 'correta': 'A'}
 
 
