@@ -109,10 +109,10 @@ while acaba == False:
                     print(enunciado)
                     palpite = input('RESPOSTA: ')
                 
-                if palpite.upper() == 'PARAR':
-                    time.sleep(2)
-                    print(f'OK! Você vai sair com um prêmio de \033[32m{premio[n]}\033[m REAIS')
-                    acaba = True
+            if palpite.upper() == 'PARAR':
+                time.sleep(2)
+                print(f'\nOK! Você vai sair com um prêmio de \033[32m{premio[n]}\033[m REAIS')
+                acaba = True
                 
 
             if palpite.upper() == 'PULA':
@@ -145,7 +145,7 @@ while acaba == False:
                     print ('\033[0,32mPARABÉNS! VOCÊ GANHOU 1 MILHÃO DE REIAS!\033[m')
                     acaba = True 
 
-            else:
+            elif palpite != questao['correta'] and palpite!='parar' and palpite!= 'ajuda' and palpite!='pula':
                 time.sleep(2)
                 print('\n\033[31mRESPOSTA INCORRETA\033[m! Seu prêmio voltou a ser \033[33m0\033[m REAIS\n ')
                 acaba = True
