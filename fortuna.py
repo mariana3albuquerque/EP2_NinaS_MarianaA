@@ -139,6 +139,7 @@ while acaba == False:
                     jogadas += 1
                     time.sleep(2)
                     print(f'\n\033[32mParabens\033[m, você acertou! Seu premio agora é de \033[32m{premio[n]}\033[m REAIS\n')
+                    time.sleep(1.5)
                     validade = 0
                 else:
                     time.sleep(2)
