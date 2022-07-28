@@ -66,9 +66,9 @@ while acaba == False:
 
         if palpite.upper() not in lista_opcoes:
             time.sleep(2)
-            print("\nOpcão Inválida! Tente novamente...\n")
+            print("\nOpcão \033[31mInválida\033[m! Tente novamente...\n")
             time.sleep(1)
-            print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"! ')
+            print('As opções de resposta são \033[36m"A"\033[m, \033[32m"B"\033[m, \033[35m"C"\033[m, \033[34m"D"\033[m, \033[33m"ajuda"\033[m, \033[35m"pula"\033[m e \033[31m"parar"\033[m!\n ')
             time.sleep(1)
             print(enunciado)
             palpite = input('RESPOSTA: \n')
@@ -123,7 +123,7 @@ while acaba == False:
                 palpite = input('RESPOSTA: ')
                 if pulo == 0:
                     time.sleep(2)
-                    print('Você não tem mais pulos!, escolha outra opção...')
+                    print('Você não tem mais \033[35mpulos\033[m! Escolha outra opção...')
                     print(enunciado)
                     palpite = input('RESPOSTA: ')
                     print('')
