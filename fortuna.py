@@ -12,13 +12,13 @@ from valida_questoes import valida_questoes
 #preparando dados para o jogo
 lista_falhas = valida_questoes(quest)
 if len(lista_falhas) != lista_falhas.count({}):
-    print('base esta uma bosta')
+    print('base esta com erro')
     quit()
 
 dicionario_questoes = transforma_base(quest)
 acaba = False
 
-while acaba == False:  #looping que permite reinicializar o jogo
+while acaba == False:  #looping que permite reiniciar o jogo
     #comecando o jogo
     premio = [0,1000,5000,10000,30000,50000,100000,300000,500000,1000000]
     lista_opcoes = ['A',"B","C","D","AJUDA","PULA","PARAR"]
@@ -131,7 +131,7 @@ while acaba == False:  #looping que permite reinicializar o jogo
             # RESPOSTA ERRADA
             elif palpite.upper() != questao['correta'] and palpite.upper()!='PARAR' and palpite.upper()!= 'AJUDA' and palpite.upper()!='PULA':
                 time.sleep(2)
-                print('\n\033[31mRESPOSTA INCORRETA\033[m! Seu prêmio voltou a ser \033[33m0\033[m REAIS\n ')
+                print('\n\033[31mRESPOSTA INCORRETA\033[m! Você perdeu e vai sair com \033[33m0\033[m REAIS\n ')
                 acaba = True
             
     #REINICIANDO O JOGO
